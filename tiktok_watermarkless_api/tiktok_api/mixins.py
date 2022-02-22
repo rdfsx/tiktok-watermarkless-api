@@ -1,4 +1,3 @@
-import time
 from abc import ABC, abstractmethod
 from typing import Optional
 
@@ -32,6 +31,4 @@ class MainTikTokMediaMixin(AbstractMediaMixin):
         }
         downloader = YoutubeDL(ydl_opts)
         info: dict = downloader.extract_info(link)
-        if info:
-            return info
-        return None
+        return info or None
