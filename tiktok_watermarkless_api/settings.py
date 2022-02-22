@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -21,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-p(3_(9wvicbq3nccl2=6q7da=33h*f3l+t*!m3-eg_=lpqfl&1'
+SECRET_KEY = '#hxtv=*3wotu(^w$dty005mldlo3i$iufcm+ue7#dt%v2uft_5'  # os.environ["DJANGO_SECRET_KEY"]
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'tiktok_watermarkless_api.api',
+    'tiktok_watermarkless_api.tiktok_api',
+    'rest_framework.authtoken',
 ]
 
 MIDDLEWARE = [
